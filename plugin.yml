@@ -1,0 +1,5 @@
+name: PlayerLocation
+main: uk.qvvz.location.PlayerLocation
+version: 1.0
+api-version: 1.17
+commands:
