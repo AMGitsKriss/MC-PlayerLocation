@@ -10,12 +10,12 @@ public class JoinLeaveListener implements Listener {
 	@EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-        LocationRecorder.Record(player);
+        LocationRecorder.record(player);
     }
 	
 	@EventHandler
 	public void onPlayerQuit(PlayerQuitEvent event) {
         Player player = event.getPlayer();
-        LocationRecorder.Record(player);
+        LocationRecorder.record(player);
     }
 }

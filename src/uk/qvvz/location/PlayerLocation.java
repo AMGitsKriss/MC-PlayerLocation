@@ -27,7 +27,7 @@ public class PlayerLocation extends JavaPlugin {
 			@Override
 			public void run() {
 				for (Player p : Bukkit.getOnlinePlayers()){
-					LocationRecorder.Record(p);
+					LocationRecorder.record(p);
 				}
 			}
 		}.runTaskTimer(this, 0L, tps * (60 * frequencyMins));
@@ -35,9 +35,14 @@ public class PlayerLocation extends JavaPlugin {
 	
 	@Override
     public void onDisable() {
-		// TODO - Unregister the MyListener Event
 		HandlerList.unregisterAll(loginListener);
-
 		recordTask.cancel();
+		
+		// Forcefully save everything in the cache.
+		for (Player p : Bukkit.getOnlinePlayers()){
+			LocationRecorder.record(p);
+		}
+		
+		LocationRecorder.save();
     }
 }
