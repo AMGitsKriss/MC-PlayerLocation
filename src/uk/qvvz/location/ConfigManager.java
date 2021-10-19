@@ -12,7 +12,6 @@ public class ConfigManager {
 		config.addDefault("printToConsole", false);
 		config.addDefault("batchSize", 100);
 		config.addDefault("apiEndpoint", "https://localhost:44343/recorder/add");
-		config.addDefault("csvDirectory", "");
 		config.options().copyDefaults(true);
 		
 		plugin.saveConfig();
@@ -24,10 +23,6 @@ public class ConfigManager {
 	
 	public int batchSize() {
 		return config.getInt("batchSize");
-	}
-
-	public String csvDirectory() {
-		return config.getString("csvDircetory");
 	}
 
 	public String endpointUri() {

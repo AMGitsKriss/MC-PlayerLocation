@@ -57,7 +57,7 @@ public class LocationRecorder {
 		if(config.endpointUri() != null && !config.endpointUri().trim().isEmpty()) {
 			postToApi(locationQueue);
 		}
-		else if(config.csvDirectory() != null && !config.endpointUri().trim().isEmpty()) {
+		else {
 			writeToCSV(locationQueue);			
 		}
 	}
